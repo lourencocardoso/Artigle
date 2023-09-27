@@ -1,0 +1,16 @@
+.cadastro{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.cadastro form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.login{
+  display: flex;
+}

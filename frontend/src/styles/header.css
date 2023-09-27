@@ -1,0 +1,141 @@
+header{
+  width: 100%;
+  height: 90px;
+  border-bottom: 1px solid #444;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+menu{
+  margin-left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:300px;
+}
+
+menu h1{
+  font-size: 23px;
+  font-family: 'Mochiy Pop One';
+  
+}
+menu h1 span{
+  font-size: 15px;
+  color: #B9B9B9;
+  font-family: 'Poppins';
+}
+
+menu ul{
+  margin-left: 20%;
+  display: flex;
+}
+
+menu ul li{
+  font-size: 17px;
+  margin: 7px;
+  color: #B9B9B9;
+  list-style: none;
+}
+menu ul li.ativo{
+  color: #222;
+}
+
+menu ul li:hover{
+  color: #222;
+  cursor: pointer;
+}
+
+.btns{
+  margin-right: 10%;
+}
+
+button{
+  padding: 8px 20px;
+  margin: 7px;
+  border: none;
+  border-radius: 5px;
+  background: #222;
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+}
+button.ativo{
+  background: #fff;
+  color: #222;
+}
+
+button:hover.ativo{
+  color: #fff;
+  background: #222;
+}
+.menu{
+  position: absolute;
+  background: #333;
+  width: 155px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  display: none;
+}
+
+article {
+  display: none;
+}
+
+@media (max-width: 700px){
+  article{
+    display: flex;
+  }
+  .menu{
+    display: flex;
+  }
+  menu ul{
+    display: none;
+  }
+  menu i{
+    font-size: 2.2em;
+  }
+
+  menu{
+    margin-left: 10%;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu ul li{
+    list-style: none;
+    font-size: 17px;
+    margin: 8px;
+  }
+  .menu ul li:hover{
+    border-bottom: 1px solid #fff;
+  }
+
+  @media (max-width: 390px){
+    article{
+      display: flex;
+    }
+    .menu{
+      display: flex;
+    }
+    .btns{
+      display: none;
+    }
+    menu{
+      background: #fe22;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    menu{
+      margin-right: 10%;
+    }
+  }
+}

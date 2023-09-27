@@ -1,0 +1,96 @@
+  
+  //Editagem
+  function edit(){
+    var title_id = document.getElementById('title')
+    let modal = document.getElementById('modal2')
+    if(modal.style.display == 'none'){
+      modal.style.display = 'flex'
+    } else{
+      modal.style.display = 'none'
+    }
+    title_id.value = data.title
+    
+  }
+
+  const[changeTitle, setTitle] = useState('')
+  async function editHandle(e, title){
+    if(changeTitle && changeTitle != title){
+     await api.post(`/contents/${data._id}`,{
+       title: changeTitle,
+      }) 
+  }
+ <div className="modal" id='modal2'>
+<form >
+    <h2>Edit Artiggle</h2>
+    <span className='x' onClick={ocultarModal}>x</span>
+
+    <label>Title</label>
+    <input 
+      id='title'
+      value={changeTitle}
+      onChange={e => setTitle(e.target.value)}
+      
+    />
+   <button id='submit' type='submit'>Create</button>
+</form>
+
+//Cadastro autentic
+const PrivateRoute = ({component: Component, ...rest})=> (
+  <Route
+   {...rest} 
+    render={props => 
+    isaAutenticated() ? (
+      <Component {...props}/>
+    ) : (
+      <Redirect to={{pathname: '/', state: {from: props.location }}}/>
+    )
+}
+  />
+)
+
+// Filter
+
+     <label >Todos</label>
+            <input type="checkbox" 
+             checked={selectedValue == 'all'}
+             onChange={e => handleChange(e.target)}
+             value='all'
+            /> 
+            <label >Prioridades</label>
+            <input type="checkbox" 
+            checked={selectedValue == 'true'}
+            onChange={e => handleChange(e.target)}
+            value='true'
+            /> 
+            <label >Normal</label>
+            <input type="checkbox" 
+            checked={selectedValue == 'false'}
+            onChange={e => handleChange(e.target)}
+            value='false'
+            />
+            
+
+            //Nodemail
+
+            //Nodemailer
+            const nodemailer = require('nodemailer')
+let transport =nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
+  auth: {
+   user: 'lorryscode@gmail.com',
+   pass: 'eekmekjnznwdvxav',
+  }
+}); 
+
+
+transport.sendMail({
+ from: 'Manual do dev <lorryscode@gmail.com>',
+ to: 'lorryscode@gmail.com',
+ subject: 'Enviando email com nodemailer',
+ html: '<h1> Olá Dev!</h1> <p>Esse email foi enviado usando Nodemailer',
+ text: 'Olá Dev!Esse email foi enviado usando Nodemailer',
+})
+.then(() => console.log('Email enviado com sucesso'))
+.catch((err) => console.log('Erro ao enviar o email', err))
